@@ -4,31 +4,65 @@
 	<meta charset="UTF-8">
 	<title>Angular Liste films</title>
 	<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
 
 </head>
 <body>
 	<div id="app" ng-controller="AppController as AppCtrl">
-		<form action="#">
-			<input type="text" id="film_title" placeholder="Place title here">
-			<input type="text" id="film_synopsis" placeholder="Place synopsis here">
-			<input type="text" id="film_genre" placeholder="Place genre here">
-			<input type="text" id="film_url" placeholder="Place url here">
-			<textarea id="film_actors" rows="10" cols="50">Write actors here</textarea>
+
+		<form class="col-md-6" ng-submit="newFilm($event)">
+			<div class="form-group">
+				<label class="control-label col-md-4">Title</label>
+				<input type="text" id="film_title" placeholder="Place title here" required class="form-control col-md-8" ng-model="title">
+			</div>
+
+			<div class="form-group">
+				<label class="control-label col-md-4">Synopsis</label>
+				<input type="text" id="film_synopsis" placeholder="Place synopsis here" required class="form-control col-md-8" ng-model="synopsis">
+			</div>
+
+			<div class="form-group">
+				<label class="control-label col-md-4">Genre</label>
+				<input type="text" id="film_genre" placeholder="Place genre here" required class="form-control col-md-8" ng-model="genre">
+			</div>
+
+			<div class="form-group">
+				<label class="control-label col-md-4">URL</label>
+				<input type="text" id="film_url" placeholder="Place url here" required class="form-control col-md-8" ng-model="url">
+			</div>
+
+			<div class="form-group">
+				<label class="control-label col-md-4">Actors</label>
+				<textarea id="film_actors" rows="10" cols="50" class="form-control" ng-model="actors"></textarea>
+			</div>
+
 			<input type="submit" placeholder="Add!">
 		</form>
 
+
+		<div class="clearfix"></div>
 		<div class="film-list">
-			<!-- Rien ici pour l'instant -->
+			<div ng-repeat="film in films">
+				<div class="panel panel-default col-md-6">
+					<div class="panel-body">
+						<h2>Title : {{film.title}}</h2>
+						<p>Synopsis: {{film.synopsis}}</p>
+						<p>Genre: {{film.genre}}</p>
+						<img class="col-md-6" src="{{film.url}}" alt="">
+						<p>URL: {{film.actors}}</p>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 
 
 	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js"></script>
 	<script src="app.js"></script>

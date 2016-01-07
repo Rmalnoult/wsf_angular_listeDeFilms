@@ -99,7 +99,7 @@ var Controller = {
 				var url = '<img class="col-md-6" src="'+film.url+'">';
 				var actors = '<p>actors : '+film.actors+'</p>';
 
-				div.innerHTML = title+synopsis+genre+url+actors;
+				div.innerHTML = '<div class="panel-body">'+title+synopsis+genre+url+actors+'</div>';
 
 				this.renderContainer.appendChild(div);
 			}
