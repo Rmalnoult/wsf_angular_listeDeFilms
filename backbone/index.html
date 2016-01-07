@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="App">
+<head>
+	<meta charset="UTF-8">
+	<title>Backbone Liste films</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+
+</head>
+<body>
+	<div id="app">
+		<form action="#" class="col-md-6">
+			<div class="form-group">
+				<label class="control-label col-md-4">Title</label>
+				<input type="text" id="film_title" placeholder="Place title here" required class="form-control col-md-8">
+			</div>
+
+			<div class="form-group">
+				<label class="control-label col-md-4">Synopsis</label>
+				<input type="text" id="film_synopsis" placeholder="Place synopsis here" required class="form-control col-md-8">
+			</div>
+
+			<div class="form-group">
+				<label class="control-label col-md-4">Genre</label>
+				<input type="text" id="film_genre" placeholder="Place genre here" required class="form-control col-md-8">
+			</div>
+
+			<div class="form-group">
+				<label class="control-label col-md-4">URL</label>
+				<input type="text" id="film_url" placeholder="Place url here" required class="form-control col-md-8">
+			</div>
+
+			<div class="form-group">
+				<label class="control-label col-md-4">Actors</label>
+				<textarea id="film_actors" rows="10" cols="50" class="form-control"></textarea>
+			</div>
+
+			<input type="submit" placeholder="Add!">
+		</form>
+		<div class="clearfix"></div>
+		<div class="film-list">
+			<!-- Rien ici pour l'instant -->
+		</div>
+	</div>
+
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>
